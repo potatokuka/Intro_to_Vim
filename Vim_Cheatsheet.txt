@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    Vim_Cheatsheet.txt                                 :+:    :+:             #
+#                                                      +:+                     #
+#    By: greed <greed@student.codam.nl>               +#+                      #
+#                                                    +#+                       #
+#    Created: 2020/07/15 12:22:34 by greed         #+#    #+#                  #
+#    Updated: 2020/07/15 12:22:35 by greed         ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
 -- Recommendations --
 If you will be using vim/nvim, I highly advise installing 'Lazygit'
 this will make your work life so much easier. Just remember while using it
