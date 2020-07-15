@@ -1,0 +1,128 @@
+******NORMAL MODE******
+
+--MOVEMENT / MOTION--
+
+* Can type a MOTION before a command to repeat it *
+
+h   		move left
+j   		move down 
+k   		move up
+l   		move right
+
+''		go to previous location in file
+x%		go to x % of file depth
+gg		go to top of file
+G		go to bottom of file
+/'string' 	find 'string' in file
+?'string'	find 'string' in file, but backwards
+%		jump to matching bracket "{ [ (  ) ] }"
+*** MOTION ***
+
+S		search to first occurance of letter in line <BACKWARDS>
+s		search to first occurance of letter in line <FORWARDS>
+F		jump to first occurance of letter in line <BACKWARDS>
+f		search to first occurance of letter in line <FORWARDS>
+
+b		move back a word
+w		move forward to the next start of word
+e		move forward to the next end of word
+'{}'        	skip between paragraphs NEW LINE to NEW LINE
+0 || ^		go to start of line
+$		end of line
+""		move to next ""
+
+[SHIFT]ZQ   	quit (no save)
+[SHIFT]ZZ   	write and quit
+
+zz          	put current line in middle of buffer screen
+zt          	put current line at the top of screen
+zb          	put current line at the bottom of screen
+
+I           	insert mode at the start of the line
+i           	go into insert mode to the left of cursor
+a           	go into insert mode to the right of cursor
+A           	insert mode at the end of line
+
+[SHIFT]O    	inserts new line above cursor and puts into insert mode
+o           	inserts new line below cursor and puts into insert mode
+
+*** DELETION ***
+x		delete on cursor location
+c		change, same as d(delete) but puts into insert mode
+		    all delete keystrokes work with this
+dw		delete from cursor to end of word
+'d'		vim function waiting for "what to delete"
+d$([SHIFT]D)	delete to the end of the line
+d^(d0)		delete to the start of the line
+de		delete to the end of the world, doesnt delete the trailing
+		  whitespace
+daw 		delete word and white space around it (doesnt matter where
+		  cursor is)
+diw		delete word leaving white space (doesnt matter where the cursor
+		  is)
+dap		delete around paragraph
+db		delete from cursor to start of the word
+dd		delete the line of cursor
+di()		delete inside '(blah blah)'
+da()		delete around '(blah blah)' including ()
+di""		delete inside "Blah Blah"
+da""		delete around "Blah Blah" include ""
+
+u		undo
+U		undo all on line
+[CTRL]r		redo
+p		paste
+y		yank
+yy		yank whole line
+
+[CTRL]g		cursor location and file status
+[esc]		re enters normal mode, breaks out of visual or insert
+
+[SHIFT]R	Continuous Replace
+[SHIFT]~	Change case on cursor
+
+v		enter visual mode, selects char by char
+V		enter visual mode, selects line by line
+[CTRL]v		enter visual mode, block selection
+
+.		re uses last command used
+
+*******COMMAND MODE*******
+
+:x          	save and quit buffer
+:w          	save buffer
+:sort       	sort file alphabetically
+:(number)	go to this line in file
+:earlier'x'm	jump back x time in buffer
+:later'x'm	jump forward x time in buffer
+:norm		runs next given sequence in normal mode
+:set ic		sets to ignore case
+:set hl		set hl search
+****** SUBSTITUTE COMMANDS ******
+:s/'str1'/'str2'/g	replaces every instance of str1 with str2 (no g for only
+			  1 time) ONLY 1 LINE
+
+:%s/'str1'/'str2'/g	replaces every instance of str1 with str2 (no g for only
+			  1 time) WHOLE FILE
+
+*** BETTER COMMENTS ***
+[esc]		enter normal mode
+[CTRL]v		Visual Block Mode
+j/k		select all lines to be commented
+[SHIFT]i	insert mode for all lines highlited
+-ENTER COMMENTS- eg: '//'
+[esc][esc]
+
+*** BETTER UNCOMMENTS ***
+[esc]		enter normal mode
+[CTRL]v		visual block mode
+j/k/h/l		select all comments to be deleted
+d/x		delete all highlighted text
+
+OR
+[CTRL]v		visual block and highlight where all comments will go
+:norm i'str'	insterts 'str' eg: // 
+
+UNDO
+[CTRL]v		visual block and highlight where all comments will be deleted
+:norm x		deletes all highlighted text 
